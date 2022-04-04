@@ -59,6 +59,8 @@ class YatzyBoard {
     t += "\n* Current upper Score $upperScore";
     t += "\n* Current bank Score $_bankScore";
     t += "\n* Current upper Score $_upperBank";
+    t += "\n* Has Yatzy $hasYatzy";
+    t += "\n* Has bonus $hasBonus";
     return t;
   }
 
