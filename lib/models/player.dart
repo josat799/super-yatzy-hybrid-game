@@ -2,17 +2,19 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:yatzy/models/yatzy_board.dart';
 
 class Player {
   String name;
-  UniqueKey? id;
+  late UniqueKey id;
+  late YatzyBoard _board;
   int playedMatches = 0;
   Color? color;
-  int score = 0;
 
   Player(this.name, [this.color]) {
     id = UniqueKey();
     color ??= _randomColor();
+    _board = YatzyBoard();
   }
 
   Color _randomColor() {
