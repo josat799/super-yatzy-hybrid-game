@@ -7,14 +7,14 @@ import 'package:yatzy/models/yatzy_board.dart';
 class Player {
   String name;
   late UniqueKey id;
-  late YatzyBoard _board;
+  late YatzyBoard board;
   int playedMatches = 0;
   Color? color;
 
   Player(this.name, [this.color]) {
     id = UniqueKey();
     color ??= _randomColor();
-    _board = YatzyBoard();
+    board = YatzyBoard();
   }
 
   Color _randomColor() {
