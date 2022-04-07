@@ -2,19 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:yatzy/models/player.dart';
 
 class PlayerBadge extends StatelessWidget {
-  const PlayerBadge({
+  const PlayerBadge.extended(
+      {Key? key,
+      required this.player,
+      this.callback,
+      required this.height,
+      required this.width,
+      this.elevation})
+      : _extended = true,
+        super(key: key);
+
+  const PlayerBadge.disposable({
     Key? key,
     required this.player,
     this.callback,
     required this.height,
     required this.width,
     this.elevation,
-  }) : super(key: key);
+  })  : _extended = false,
+        super(key: key);
 
   final Player player;
   final Function? callback;
   final double height, width;
   final double? elevation;
+  final bool _extended;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +46,10 @@ class PlayerBadge extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text(player.name),
+                child: Text(
+                  "${player.name} ${_extended ? player.board.score : ""}",
+                  softWrap: true,
+                ),
               ),
             ),
           ),

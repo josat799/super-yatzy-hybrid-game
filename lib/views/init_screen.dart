@@ -119,7 +119,7 @@ class _InitScreenState extends State<InitScreen> {
         itemCount: players.length,
         itemBuilder: (ctx, i) => SizedBox(
           width: 100,
-          child: PlayerBadge(
+          child: PlayerBadge.disposable(
             height: 40,
             width: 90,
             player: players.elementAt(i),

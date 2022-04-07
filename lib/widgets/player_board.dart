@@ -34,13 +34,13 @@ class PlayerBoard extends StatelessWidget {
             itemBuilder: (context, index) {
               var player = _match.players.elementAt(index);
               return player.id == _match.currentPlayer!.id
-                  ? PlayerBadge(
+                  ? PlayerBadge.extended(
                       player: player,
                       height: 60,
                       width: double.infinity,
                       elevation: 8.0,
                     )
-                  : PlayerBadge(
+                  : PlayerBadge.extended(
                       player: player,
                       height: 50,
                       width: MediaQuery.of(context).size.width / 6 * .8,
