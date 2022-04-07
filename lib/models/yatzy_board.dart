@@ -64,6 +64,8 @@ class YatzyBoard {
     return t;
   }
 
+  Map<scoreLabel, Score> get boardMap => _boardMap;
+
   void _updateBank(scoreLabel label, int amountOfDices) {
     _upperBank[label] = amountOfDices;
     _bankScore = _upperBank.entries.fold<int>(
