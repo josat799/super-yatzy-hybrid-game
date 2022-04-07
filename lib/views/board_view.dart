@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:yatzy/models/match.dart';
 import 'package:yatzy/models/player.dart';
 import 'package:yatzy/widgets/player_board.dart';
+import 'package:yatzy/widgets/yatzy_notes.dart';
 
 class BoardView extends StatefulWidget {
   static const ROUTE = "/Board";
@@ -90,6 +91,7 @@ class _BoardViewState extends State<BoardView>
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 5 / 6,
+            child: YatzyNotes(player: _match.currentPlayer!),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
